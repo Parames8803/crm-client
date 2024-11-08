@@ -69,23 +69,22 @@ const Proposals = () => {
             className="bg-cyan-600 text-white flex flex-row-reverse gap-1 items-center text-white 2xl:py-2.5"
           />
         </div>
-
-        <div className="bg-white shadow-md rounded">
-          <div className="overflow-x-auto p-5 shadow-sm">
-            <table className="w-full">
-              <thead className="bg-red-300 text-black">
-                <tr className="text-center">
-                  <th className="py-3 text-left px-5">Proposal No</th>
-                  <th className="py-2">Date</th>
-                  <th className="py-2">Company</th>
-                  <th className="py-2">Amount</th>
-                  <th className="py-2">Status</th>
-                  <th className="py-3 text-right px-5">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {proposals && proposals.length > 0 && (
-                  <>
+        {proposals && proposals.length > 0 ? (
+          <>
+            <div className="bg-white shadow-md rounded">
+              <div className="overflow-x-auto p-5 shadow-sm">
+                <table className="w-full">
+                  <thead className="bg-red-300 text-black">
+                    <tr className="text-center">
+                      <th className="py-3 text-left px-5">Proposal No</th>
+                      <th className="py-2">Date</th>
+                      <th className="py-2">Company</th>
+                      <th className="py-2">Amount</th>
+                      <th className="py-2">Status</th>
+                      <th className="py-3 text-right px-5">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     {proposals.map((value, index) => (
                       <tr key={index} className="border-b border-gray-300">
                         <td className="text-left px-5">{value.proposalId}</td>
@@ -125,12 +124,14 @@ const Proposals = () => {
                         </td>
                       </tr>
                     ))}
-                  </>
-                )}
-              </tbody>
-            </table>
-          </div>
-        </div>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="text-xl text-gray-700">No Proposals Found</div>
+        )}
       </div>
       <ConfirmatioDialog
         open={openDialog}

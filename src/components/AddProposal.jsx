@@ -323,9 +323,6 @@ const AddProposal = () => {
             <button
               type="submit"
               className="bg-blue-700 text-white px-4 py-2 my-3 text-xl"
-              onClick={() => {
-                window.location.reload();
-              }}
             >
               Submit
             </button>

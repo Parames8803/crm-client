@@ -172,24 +172,24 @@ const BulkMessage = () => {
             </table>
           </div>
         ) : (
-          <div className="text-2xl text-gray-700">
-            No Follow ups in Database
+          <div className="text-xl text-gray-700">No Follow ups Found</div>
+        )}
+        {data.length > 0 && (
+          <div className="flex justify-end">
+            <Button
+              icon={<FaCloudUploadAlt />}
+              className={
+                "flex gap-5 items-center justify-between text-white bg-cyan-600 w-fit my-8"
+              }
+              type={"submit"}
+              label={"Send Bulk Email"}
+              onClick={() => {
+                setOpen(true);
+                setEmails(data);
+              }}
+            />
           </div>
         )}
-        <div className="flex justify-end">
-          <Button
-            icon={<FaCloudUploadAlt />}
-            className={
-              "flex gap-5 items-center justify-between text-white bg-cyan-600 w-fit my-8"
-            }
-            type={"submit"}
-            label={"Send Bulk Email"}
-            onClick={() => {
-              setOpen(true);
-              setEmails(data);
-            }}
-          />
-        </div>
       </>
       <SendMessage
         open={open}

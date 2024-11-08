@@ -186,18 +186,23 @@ const Trash = () => {
             />
           </div>
         </div>
-        <div className="bg-white shadow-md rounded">
-          <div className="overflow-x-auto p-5 shadow-sm">
-            <table className="w-full">
-              <TableHeader />
-              <tbody>
-                {data?.tasks?.map((tk, id) => (
-                  <TableRow key={id} item={tk} />
-                ))}
-              </tbody>
-            </table>
+
+        {data?.tasks?.length > 0 ? (
+          <div className="bg-white shadow-md rounded">
+            <div className="overflow-x-auto p-5 shadow-sm">
+              <table className="w-full">
+                <TableHeader />
+                <tbody>
+                  {data?.tasks?.map((tk, id) => (
+                    <TableRow key={id} item={tk} />
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="text-xl text-gray-700">No Trash Found</div>
+        )}
       </div>
 
       {/* <AddUser open={open} setOpen={setOpen} /> */}

@@ -146,18 +146,22 @@ const Users = () => {
           />
         </div>
 
-        <div className="bg-white shadow-md rounded">
-          <div className="overflow-x-auto p-5 bg-white shadow-md">
-            <table className="w-full">
-              <TableHeader />
-              <tbody>
-                {data?.map((user, index) => (
-                  <TableRow key={index} user={user} />
-                ))}
-              </tbody>
-            </table>
+        {data.length > 0 ? (
+          <div className="bg-white shadow-md rounded">
+            <div className="overflow-x-auto p-5 bg-white shadow-md">
+              <table className="w-full">
+                <TableHeader />
+                <tbody>
+                  {data?.map((user, index) => (
+                    <TableRow key={index} user={user} />
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="text-xl text-gray-700">No Team Members Found</div>
+        )}
       </div>
 
       <AddUser
