@@ -13,9 +13,10 @@ export default defineConfig({
         },
       },
     },
-    chunkSizeWarningLimit: 1000, // Adjust this to suppress warnings
+    chunkSizeWarningLimit: 1500, // Adjust this to suppress warnings
   },
   server: {
+    port: 3000,
     proxy: {
       "/api": {
         target: "https://crm-server-0wml.onrender.com",
