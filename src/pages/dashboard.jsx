@@ -160,6 +160,7 @@ const Dashboard = () => {
   }
 
   const totals = data?.tasks;
+  console.log(totals);
   const stats = [
     {
       _id: "1",
@@ -171,7 +172,7 @@ const Dashboard = () => {
     {
       _id: "2",
       label: "COMPLTED TASK",
-      total: totals["completed"] || 0,
+      total: totals?.["completed"] || 0,
       icon: <MdAdminPanelSettings />,
       bg: "bg-[#0f766e]",
     },

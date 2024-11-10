@@ -24,7 +24,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://crm-server-0wml.onrender.com",
-        changeOrigin: true,
+        changeOrigin: false,
       },
     },
   },
