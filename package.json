@@ -6,8 +6,8 @@
   "scripts": {
   "dev": "npx vite",
   "build": "npx vite build",
-  "serve": "npx vite preview --port 3000",
-  "start": "npx vite preview --port 3000"
+  "serve": "npx vite preview --port $PORT",
+  "start": "npx vite preview --port $PORT"
 },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
