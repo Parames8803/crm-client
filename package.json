@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npx vite",
-    "build": "npx vite build",
-    "serve": "npx vite preview --port $PORT",
-    "start": "npx vite preview --port $PORT"
-  },
+  "preinstall": "rm -rf node_modules && npm install",
+  "dev": "npx vite",
+  "build": "npx vite build",
+  "serve": "npx vite preview --port $PORT",
+  "start": "npx vite preview --port $PORT"
+},
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@reduxjs/toolkit": "^2.1.0",
