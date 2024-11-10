@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview --port 3000",
-    "start": "vite preview --port 3000"
+    "dev": "npx vite",
+    "build": "npx vite build",
+    "serve": "npx vite preview --port $PORT",
+    "start": "npx vite preview --port $PORT"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
